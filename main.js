@@ -7,23 +7,30 @@ var generatedMessage = document.querySelector('.generated-message');
 
 
 //radio buttons. how to get them to work
-affirmation.addEventListener('click', getAffirmation);
-mantra.addEventListener('click', getMantra);
+affirmation.addEventListener('click', selectedAffirmation);
+mantra.addEventListener('click', selectedMantra);
 
 //user clicks and will hide image and show message
 // receiveMessage.addEventListener('click', getMessage);
 receiveMessage.addEventListener('click', getMessage);
 
+function selectedAffirmation(){
+  message.classList.add('hidden');
+  meditationImage.classList.remove('hidden');
+}
+function selectedMantra(){
+  message.classList.add('hidden');
+  meditationImage.classList.remove('hidden');
+}
 
 function getMessage(){
   message.classList.toggle('hidden');
   meditationImage.classList.toggle('hidden');
-  if (affirmation === true){
+  if (affirmation.checked){
     getAffirmation();
   } else
-  getMantra()
+    getMantra()
 };
-
 
 function getAffirmation(){
   var randomizedAffirmation = affirmations[getRandomIndex(affirmations)];
@@ -31,7 +38,6 @@ function getAffirmation(){
 };
 
 function getMantra(){
-
   var randomizedMantra = mantras[getRandomIndex(mantras)];
   return message.innerText = `${randomizedMantra}`;
 };
