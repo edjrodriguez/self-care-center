@@ -2,10 +2,36 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="styles.css">
+    <link href="meditate.svg">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
-  
-    <script type="text/javascript" src="main.js"></script>
-  </body>
-</html>
+    <section class="header">
+      <h1>✨ Self Care Center ✨</h1>
+    </section>
+    <section class="header-2" >
+      <h4>Which Type of Message?</h4>
+          <section class="all-buttons">
+            <div class="input-buttons">
+                <div>
+                  <input class="affirmation" type="radio" name="button">     affirmation</button>
+                </div>
+                <div>
+                  <input class="mantra" type="radio" name="button">     mantra</button>
+                </div>
+            </div>
+            <div class="receive-message-button-container">
+              <button class="receive-message" type="button" name="button">Receive Message</button>
+            </div>
+          </section>
+      </section>
+      <section  class="message-section">
+        <section class="image-container">
+            <p class="hidden generated-message"></p>
+            <img class="image" src="assets/meditate.svg">
+        </section>
+      </section>
+      <script src="data.js"></script>
+      <script type="text/javascript" src="main.js"></script>
+    </body>
+    </html >

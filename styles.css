@@ -6,3 +6,111 @@ dark-blue - #134d71;
 white - #ffffff;
 black - #000000;
 */
+
+* {
+  /* border: red solid 1px; */
+  font-family: 'Quicksand', sans-serif;
+}
+body{
+  background: linear-gradient(#134d71, #78a7c6, #f7e4bf);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+ 	flex-direction: column;
+  justify-content:space-around;
+  align-items: stretch;
+  align-content: stretch;
+}
+.header{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+h1{
+  width: auto;
+  font-size: 1.875em;
+  color: white;
+
+}
+
+h4{
+  color: white;
+  margin: .5em .5em .1em .5em;
+  font-size: 1.5em;
+}
+
+
+button {
+  color: white;
+  background: #134d71;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.receive-message-button-container{
+    border: 10% 10% 10% 10%;
+    margin: 1%;
+    width: 25%;
+}
+
+.header-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0% 0% 5% 0%;
+}
+
+.all-buttons{
+  background: white;
+  width: 40%;
+  border-radius: 10px;
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+
+	/* align-content: stretch; */
+}
+
+.input-buttons {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 3%;
+}
+
+.message-section{
+  height: 20%;
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0% 0% 15%;
+}
+.image-container {
+  width: 68%;
+  height: 100% ;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+}
+img {
+  width: 20%;
+  height: 60%;
+}
+
+.hidden {
+  display: none;
+}
