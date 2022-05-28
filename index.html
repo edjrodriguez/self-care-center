@@ -22,6 +22,7 @@
             </div>
             <div class="receive-message-button-container">
               <button class="receive-message" type="button" name="button">Receive Message</button>
+              <button class="clear-message hidden" type="button" name="button">Clear Message</button>
             </div>
           </section>
       </section>
@@ -31,6 +32,32 @@
             <img class="image" src="assets/meditate.svg">
         </section>
       </section>
+      <section class="custombutton-container">
+        <div class="add-message-button-container ">
+          <button class="add-message" type="button" name="button">Add Custom Message</button>
+        </div>
+      </section>
+      <section class="custom-form-container  hidden">
+        <h5> Which type of message would you like to add?</h5>
+        <div class="form-container">
+        <form>
+          <div class="input-buttons2">
+              <div>
+                <input class="add-affirmation" type="radio" name="button">     affirmation</button>
+              </div>
+              <div>
+                <input class="add-mantra" type="radio" name="button">     mantra</button>
+              </div>
+          </div>
+          <div class="input-box">
+            <input id ="text-input" class="custom-input" type="text" placeholder="Custom message">
+          </div>
+          <div class="submit-button-container">
+            <button id="change-text-btn" class="change-text">Submit</button>
+          </div>
+        </form>
+      </div>
+    </section>
       <script src="data.js"></script>
       <script type="text/javascript" src="main.js"></script>
     </body>

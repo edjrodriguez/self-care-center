@@ -1,37 +1,53 @@
+//querySelectors that already work
 var affirmation = document.querySelector('.affirmation');
 var mantra = document.querySelector('.mantra');
 var receiveMessage = document.querySelector('button');
 var message = document.querySelector('p');
 var meditationImage = document.querySelector('.image');
 var generatedMessage = document.querySelector('.generated-message');
-
-
-//radio buttons. how to get them to work
+var clearMessage = document.querySelector('.clear-message');
+var hideImageContainer = document.querySelector('.image-container');
+var addCustomMessage = document.querySelector('.add-message');
+var header2 = document.querySelector('.header-2');
+var customForm = document.querySelector('.custom-form-container');
+var customButtonContainer = document.querySelector('.custombutton-container');
+var addAffirmation = document.querySelector('.add-affirmation');
+var addMantra = document.querySelector('.add-mantra');
+var submitPush = document.querySelector('#change-text-btn');
+var customMessage = document.querySelector('#text-input');
+// new querySelectors to be verified
+//eventListeners thatalready work
 affirmation.addEventListener('click', selectedAffirmation);
 mantra.addEventListener('click', selectedMantra);
-
-//user clicks and will hide image and show message
-// receiveMessage.addEventListener('click', getMessage);
 receiveMessage.addEventListener('click', getMessage);
+clearMessage.addEventListener('click', resetMessageSection);
+addCustomMessage.addEventListener('click', showCustomMessageForm);
+
+//new event listeners to be verified
+
+//functions
+function showCustomMessageForm (){
+  hideImageContainer.classList.toggle('new-style');
+  addCustomMessage.classList.add('hidden');
+  header2.classList.add('hidden');
+  customForm.classList.remove('hidden');
+  customButtonContainer.classList.add('hidden');
+  resetMessageSection ()
+}
 
 function selectedAffirmation(){
-  message.classList.add('hidden');
-  meditationImage.classList.remove('hidden');
+  resetMessageSection ()
 }
 function selectedMantra(){
-  message.classList.add('hidden');
-  meditationImage.classList.remove('hidden');
+  resetMessageSection ()
 }
 
-function getMessage(){
-  message.classList.toggle('hidden');
-  meditationImage.classList.toggle('hidden');
-  if (affirmation.checked){
-    getAffirmation();
-  } else
-    getMantra()
-};
-
+function resetMessageSection (){
+  message.classList.add('hidden');
+  meditationImage.classList.remove('hidden');
+  receiveMessage.classList.remove('hidden');
+  clearMessage.classList.add('hidden');
+}
 function getAffirmation(){
   var randomizedAffirmation = affirmations[getRandomIndex(affirmations)];
   return message.innerText = `${randomizedAffirmation}`;
@@ -46,17 +62,19 @@ function getRandomIndex(array){
   return Math.floor(Math.random() * array.length);
 };
 
-
-// Toggle image class or img.  going to replace that div with a new div that will display the randomized mantra.
-// similar to render and replacing data models.
-// Think remove image and replace it with the Message
-// is thsi code block below useful in my get mantra/affirmation function so that they just populate the element and all that the get message button does is refrsh the page.  How to delete/replacee (is this going to be a toggle feature?)
-// savedCoversSection.innerHTML = '';
-// for(var i = 0; i < savedCovers.length; i++){
-//   if(!savedCovers.includes(savedCovers)){
-//     savedCoversSection.innerHTML +=
-//     `<section class = "mini-cover">
-//     <img class="cover-image" id = "${savedCovers[i].id}" src="${savedCovers[i].cover}">
-//     <h2 class="cover-title" > ${savedCovers[i].title} </h2>
-//     <h3 class="tagline">A tale of <span class="tagline-1" >${savedCovers[i].tagline1}</span> and <span class="tagline-2" >${savedCovers[i].tagline2}</span></h3>
-//     </section>`
+function getMessage(){
+  if (affirmation.checked){
+    receiveMessage.classList.add('hidden');
+    clearMessage.classList.remove('hidden');
+    message.classList.toggle('hidden');
+    meditationImage.classList.toggle('hidden');
+    getAffirmation();
+  } else if (mantra.checked){
+    receiveMessage.classList.add('hidden');
+    clearMessage.classList.remove('hidden');
+    message.classList.toggle('hidden');
+    meditationImage.classList.toggle('hidden');
+    getMantra()
+  } else
+    alert ("Select affirmation or mantra to receive a message");
+};
