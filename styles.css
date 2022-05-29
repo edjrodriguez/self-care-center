@@ -1,18 +1,6 @@
-/* font-family: 'Quicksand', sans-serif;
-COLORS
-light-yellow - #f7e4bf;
-light-blue - #78a7c6;
-dark-blue - #134d71;
-white - #ffffff;
-black - #000000;
-*/
-
 * {
-  /* border: red solid 1px; */
   font-family: 'Quicksand', sans-serif;
 }
-
-
 body{
   background: linear-gradient(#134d71, #78a7c6, #f7e4bf);
   font-size: 100%;
@@ -33,27 +21,22 @@ body{
   align-items: center;
   margin-top: 5%;
   margin-bottom: 3%;
-
 }
-
 h1{
   width: auto;
   font-size: 2em;
   color: white;
 }
-
 h4{
   color: white;
   margin: .5em .5em .1em .5em;
   font-size: 1.2em;
 }
-
 h5{
   color: #134d71;
   margin: 0em .5em .1em .5em;
   font-size: 1.8em;
 }
-
 .receive-message {
   color: white;
   background: #134d71;
@@ -62,7 +45,6 @@ h5{
   margin: .5em;
   padding: 3px 6px 3px 6px;
 }
-
 .clear-message {
   color: #134d71;
   font-size: .95em;
@@ -86,9 +68,7 @@ h5{
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  /* margin: 0% 0% 10% 0%; */
 }
-
 form {
   background: white;
   width: 68%;
@@ -100,25 +80,21 @@ form {
   border-radius: 10px;
   margin-top: 4%;
 }
-
 .form-container{
   display: flex;
   width: 68%;
   height: 90%;
   justify-content: space-between;
   flex-direction: column;
-  align-items: center ;
+  align-items: center;
 }
-
 .add-message-button-container{
   display: flex;
   width: 69%;
   height: 25%;
   justify-content: flex-end;
   margin-top: 1%;
-
 }
-
 .input-box{
   height: 2.5em;
   width: 60%;
@@ -126,11 +102,9 @@ form {
   align-items: center;
   justify-content: center;
 }
-
 .custom-input{
   height: 2.5em;
   width: 100%;
-
 }
 .add-message {
   font-size: .8em;
@@ -142,14 +116,11 @@ form {
   white-space: normal;
   word-wrap: break-word;
 }
-
-
 .receive-message-button-container{
   border: 10% 10% 10% 10%;
   margin: 1%;
   width: 30%;
 }
-
 .header-2 {
   display: flex;
   flex-direction: column;
@@ -158,7 +129,6 @@ form {
   width: 100%;
   margin: 0% 0% 6% 0%;
 }
-
 .all-buttons{
   background: white;
   width: 40%;
@@ -169,7 +139,6 @@ form {
 	justify-content: space-around;
 	align-items: center;
 }
-
 .input-buttons {
   width: 70%;
   display: flex;
@@ -178,8 +147,6 @@ form {
   align-items: center;
   margin: 3%;
 }
-
-
 .input-buttons2 {
   width: 50%;
   display: flex;
@@ -188,7 +155,6 @@ form {
   align-items: center;
   margin: 3%;
 }
-
 .message-section{
   height: 20%;
   display: flex;
@@ -197,7 +163,6 @@ form {
   justify-content: center;
   align-items: flex-start;
   margin-top: 2%;
-
 }
 .image-container {
   width: 68%;
@@ -209,7 +174,6 @@ form {
   align-items: center;
   border-radius: 10px;
   margin-top: .3%;
-
 }
 .new-style{
   background: none;
@@ -220,7 +184,6 @@ form {
   justify-content: flex-start;
   align-items: center;
   margin: 0;
-
 }
 .submit-button-container {
   margin: 2.5%;
@@ -229,21 +192,15 @@ form {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
 }
-
 .change-text{
   font-size: 1em;
   width: 100%;
-
 }
-
 img {
   width: 20%;
   height: 60%;
 }
-
-
 .hidden {
   display: none;
 }
