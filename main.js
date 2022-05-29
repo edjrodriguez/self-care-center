@@ -13,31 +13,99 @@ var customForm = document.querySelector('.custom-form-container');
 var customButtonContainer = document.querySelector('.custombutton-container');
 var addAffirmation = document.querySelector('.add-affirmation');
 var addMantra = document.querySelector('.add-mantra');
-var submitPush = document.querySelector('#change-text-btn');
-var customMessage = document.querySelector('#text-input');
+var submitPush = document.querySelector('.change-text');
+var customMessage = document.querySelector('.custom-input');
+
+
 // new querySelectors to be verified
+
 //eventListeners thatalready work
 affirmation.addEventListener('click', selectedAffirmation);
 mantra.addEventListener('click', selectedMantra);
 receiveMessage.addEventListener('click', getMessage);
 clearMessage.addEventListener('click', resetMessageSection);
 addCustomMessage.addEventListener('click', showCustomMessageForm);
+submitPush.addEventListener('click', submitMessage)
+
+addAffirmation.addEventListener('click', pushCustomAffirmation)
+addMantra.addEventListener('click', pushCustomMantra)
 
 //new event listeners to be verified
-
 //functions
-function showCustomMessageForm (){
-  hideImageContainer.classList.toggle('new-style');
-  addCustomMessage.classList.add('hidden');
-  header2.classList.add('hidden');
-  customForm.classList.remove('hidden');
-  customButtonContainer.classList.add('hidden');
-  resetMessageSection ()
+
+console.log("HIIII", customMessage.value);
+
+function submitMessage(event){
+  event.preventDefault();
+  if (addAffirmation.checked && customMessage.value){
+  affirmations.push(customMessage.value);
+  toggleFormAndMessage ();
+  onSubmit ();
+} else if (addMantra.checked && customMessage.value){
+  mantras.push(customMessage.value)
+  toggleFormAndMessage ();
+  onSubmit ();
+} else
+alert ("Select affirmation or mantra AND add custom message before submitting");
 }
+
+function onSubmit () {
+  meditationImage.classList.add('hidden');
+  message.classList.remove('hidden');
+  receiveMessage.classList.add('hidden')
+  clearMessage.classList.remove('hidden');
+  message.innerText = customMessage.value;
+  customMessage.value = '';
+  addAffirmation.checked = false;
+  addMantra.checked = false;
+}
+
+function showCustomMessageForm (){
+  meditationImage.classList.remove('hidden');
+  message.classList.add('hidden');
+  affirmation.checked = false;
+  mantra.checked = false;
+  toggleFormAndMessage ()
+}
+
+function toggleFormAndMessage (){
+  hideImageContainer.classList.toggle('new-style');
+  header2.classList.toggle('hidden');
+  customForm.classList.toggle('hidden');
+  customButtonContainer.classList.toggle('hidden');
+}
+
+function getMessage(){
+  if (affirmation.checked){
+    getAffirmation();
+  } else if (mantra.checked){
+    getMantra()
+  } else
+  alert ("Select affirmation or mantra to receive a message");
+};
+
+function getAffirmation(){
+  receiveMessage.classList.add('hidden');
+  clearMessage.classList.remove('hidden');
+  message.classList.toggle('hidden');
+  meditationImage.classList.toggle('hidden');
+  var randomizedAffirmation = affirmations[getRandomIndex(affirmations)];
+  return message.innerText = `${randomizedAffirmation}`;
+};
+
+function getMantra(){
+  receiveMessage.classList.add('hidden');
+  clearMessage.classList.remove('hidden');
+  message.classList.toggle('hidden');
+  meditationImage.classList.toggle('hidden');
+  var randomizedMantra = mantras[getRandomIndex(mantras)];
+  return message.innerText = `${randomizedMantra}`;
+};
 
 function selectedAffirmation(){
   resetMessageSection ()
 }
+
 function selectedMantra(){
   resetMessageSection ()
 }
@@ -48,33 +116,7 @@ function resetMessageSection (){
   receiveMessage.classList.remove('hidden');
   clearMessage.classList.add('hidden');
 }
-function getAffirmation(){
-  var randomizedAffirmation = affirmations[getRandomIndex(affirmations)];
-  return message.innerText = `${randomizedAffirmation}`;
-};
-
-function getMantra(){
-  var randomizedMantra = mantras[getRandomIndex(mantras)];
-  return message.innerText = `${randomizedMantra}`;
-};
 
 function getRandomIndex(array){
   return Math.floor(Math.random() * array.length);
-};
-
-function getMessage(){
-  if (affirmation.checked){
-    receiveMessage.classList.add('hidden');
-    clearMessage.classList.remove('hidden');
-    message.classList.toggle('hidden');
-    meditationImage.classList.toggle('hidden');
-    getAffirmation();
-  } else if (mantra.checked){
-    receiveMessage.classList.add('hidden');
-    clearMessage.classList.remove('hidden');
-    message.classList.toggle('hidden');
-    meditationImage.classList.toggle('hidden');
-    getMantra()
-  } else
-    alert ("Select affirmation or mantra to receive a message");
 };
