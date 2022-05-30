@@ -8,7 +8,6 @@ body{
   height: 100vh;
   display: flex;
  	flex-direction: column;
-  /* justify-content:space-around; */
   align-items: stretch;
   align-content: stretch;
   margin-bottom: 0;
@@ -40,6 +39,7 @@ h5{
 p{
   font-size: 1.2em;
 }
+
 .receive-message {
   color: white;
   background: #134d71;
@@ -190,15 +190,27 @@ form {
 }
 .submit-button-container {
   margin: 2.5%;
-  width: 38%;
+  width: 74%;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row-reverse;
   align-items: center;
 }
 .change-text{
+  border-radius: 5px;
   font-size: 1em;
   width: 100%;
+  color: white;
+  background: #134d71;
+  margin: 0% 0% 0% 2%
+}
+.cancel{
+  border-radius: 5px;
+  font-size: 1em;
+  width: 100%;
+  color: white;
+  background: red;
+  margin: 0% 2% 0% 0%
 }
 img {
   width: 20%;
